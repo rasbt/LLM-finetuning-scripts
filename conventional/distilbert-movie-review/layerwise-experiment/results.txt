@@ -1,0 +1,72 @@
+## All layers
+
+Time elapsed 6.99 min
+
+Train: 0.9666571617126465
+Val: 0.9301999807357788 
+Test: 0.9254999756813049  
+
+## 1 -- Last Layer
+
+2.77 min
+
+Train: 0.7889142632484436
+Val: 0.7942000031471252  
+Test: 0.7871000170707703 
+
+## 2 -- Last 2 Layers	
+
+2.78 min
+
+Train: 0.868228554725647 
+Val: 0.8712000250816345
+Test: 0.8644999861717224
+
+
+
+## 3 -- Last 2 Layers + Last Transformer Block
+
+3.39 min
+
+Train: 0.9498000144958496
+Val: 0.9272000193595886
+Test: 0.921999990940094  
+
+
+## 4 -- Last 2 Layers + Last 2 Transformer Blocks
+
+4.06 min
+
+Train: 0.9771142601966858
+Val: 0.9300000071525574
+Test: 0.9240000247955322
+
+## 5 -- Last 2 Layers + Last 3 Transformer Blocks
+
+4.63 min
+
+Train: 0.9864857196807861
+Val: 0.9333999752998352
+Test: 0.9265000224113464
+
+## 6 -- Last 2 Layers + Last 4 Transformer Blocks
+
+5.15 min
+
+Train: 0.9763428568840027
+Val: 0.9279999732971191
+Test: 0.9262999892234802
+
+## 7 -- Last 2 Layers + Last 5 Transformer Blocks
+
+6.99 min
+
+Train: 0.9947142601013184
+Val: 0.9258000254631042
+Test: 0.9251999855041504
+
+## 8 -- Last 2 Layers + Last 6 Transformer Blocks
+
+Train: 0.9925428628921509
+Val: 0.9277999997138977
+Test: 0.9262999892234802

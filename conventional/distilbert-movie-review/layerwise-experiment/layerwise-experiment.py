@@ -37,7 +37,7 @@
 
 # pip install datasets
 
-import os.path as op
+import shutil
 
 from datasets import load_dataset
 
@@ -311,14 +311,15 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
 
 # ## 1 -- Last Layer
 
 # In[ ]:
 
-
-from transformers import AutoModelForSequenceClassification
+print("1 -- Last Layer")
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "distilbert-base-uncased", num_labels=2)
@@ -353,7 +354,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -381,14 +381,15 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
 
 # ## 2 -- Last 2 Layers
 
 # In[ ]:
 
-
-from transformers import AutoModelForSequenceClassification
+print("2 -- Last 2 Layers")
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "distilbert-base-uncased", num_labels=2)
@@ -426,7 +427,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -454,14 +454,17 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
 
 # ## 3 -- Last 2 Layers + Last Tranformer Block
 
+print("3 -- Last 2 Layers + Last Tranformer Block")
+
 # In[ ]:
 
 
-from transformers import AutoModelForSequenceClassification
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "distilbert-base-uncased", num_labels=2)
@@ -502,7 +505,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -530,14 +532,15 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
 
 # ## 4 -- Last 2 Layers + Last 2 Transformer Blocks
 
 # In[ ]:
 
-
-from transformers import AutoModelForSequenceClassification
+print("4 -- Last 2 Layers + Last 2 Transformer Blocks")
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "distilbert-base-uncased", num_labels=2)
@@ -581,7 +584,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -609,14 +611,15 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
 
 # ## 5 -- Last 2 Layers + Last 3 Transformer Blocks
 
 # In[ ]:
 
-
-from transformers import AutoModelForSequenceClassification
+print("5 -- Last 2 Layers + Last 3 Transformer Blocks")
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "distilbert-base-uncased", num_labels=2)
@@ -663,7 +666,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -691,25 +693,14 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
-
-# ## 6 -- Last 2 Layers + Last 4 Transformer Blocks
-
-# In[ ]:
-
-
-from transformers import AutoModelForSequenceClassification
-
-model = AutoModelForSequenceClassification.from_pretrained(
-    "distilbert-base-uncased", num_labels=2)
-
-lightning_model = CustomLightningModule(model)
-
-
-# In[ ]:
 
 
 ## 6 -- Last 2 Layers + Last 4 Transformer Blocks
+
+print("6 -- Last 2 Layers + Last 4 Transformer Blocks")
 
 for param in model.parameters():
     param.requires_grad = False
@@ -750,7 +741,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -778,14 +768,15 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
 
 # ## 7 -- Last 2 Layers + Last 5 Transformer Blocks
 
 # In[ ]:
 
-
-from transformers import AutoModelForSequenceClassification
+print("## 7 -- Last 2 Layers + Last 5 Transformer Blocks")
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "distilbert-base-uncased", num_labels=2)
@@ -829,7 +820,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -857,14 +847,15 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
 
 # ## 8 -- Last 2 Layers + Last 6 Transformer Blocks
 
 # In[ ]:
 
-
-from transformers import AutoModelForSequenceClassification
+print("8 -- Last 2 Layers + Last 6 Transformer Blocks")
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "distilbert-base-uncased", num_labels=2)
@@ -911,7 +902,6 @@ trainer = L.Trainer(
 # In[ ]:
 
 
-import time
 start = time.time()
 
 trainer.fit(model=lightning_model,
@@ -939,4 +929,6 @@ trainer.test(lightning_model, dataloaders=val_loader, ckpt_path="best")
 
 
 trainer.test(lightning_model, dataloaders=test_loader, ckpt_path="best")
+shutil.rmtree("logs")
+logger = CSVLogger(save_dir="logs/", name="my-model")
 
