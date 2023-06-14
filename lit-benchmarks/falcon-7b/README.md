@@ -1,4 +1,4 @@
-# Hyperparamter settings for finetuning Falcon 7B
+# Hyperparameter settings for finetuning Falcon 7B
 
 
 
